@@ -2,17 +2,11 @@
 使用方法示例：
 
 PageCut pageCut = new PageCut();
-
 pageCut.setCurPage(curPage);
-
 pageCut.setRowPerPage(rowPerPage);
-
 BaseFacade baseFacade = new BaseFacade();
-
 baseFacade.setTableName("mm_material");
-
 Collection<MmMaterialModel> col = baseFacade.findByPageCut(MmMaterialModel.class, pageCut, null, null, "objectRrn desc");
-
 pageCut.setResultCol(col);
 
 -----------------------
