@@ -18,6 +18,7 @@ pageCut.setResultCol(col);
 -----------------------
 
 BaseFacade方法介绍
+
 	/**
 	 * 主键查询,返回查询结果收条记录
 	 * @param objClass 实体类
