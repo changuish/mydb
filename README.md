@@ -17,14 +17,19 @@
 
 //分页信息类
 PageCut pageCut = new PageCut();
-//设置当前也
+
+//设置当前页
 pageCut.setCurPage(curPage);
+
 //设置每页条数
 pageCut.setRowPerPage(rowPerPage);
+
 //初始化数据库连接
 BaseFacade baseFacade = new BaseFacade();
+
 //表名与类名不一致是使用，或分表情况下使用
 baseFacade.setTableName("mm_material");
+
 //分页查询
 Collection<MmMaterialModel> col = baseFacade.findByPageCut(MmMaterialModel.class, pageCut, null, null, "objectRrn desc");
 	
