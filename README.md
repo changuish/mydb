@@ -1,16 +1,31 @@
 # mydb
+
+数据库配置信息
+1、配置文件dbmanager.properties，放在类路径下
+2、配置信息
+	
+	DEFAULT.DBSCHEMA=jdbc:mysql://localhost:3306/db_xwmes_xiuwu?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+
+	#DBDRIVERCLASS=com.mysql.cj.jdbc.Driver
+	DEFAULT.DBDRIVERCLASS=com.mysql.jdbc.Driver
+	DEFAULT.DBUSER=root
+	DEFAULT.DBMAXLINKER=1000
+	DEFAULT.DBPASSWORD=mysqld@V5.7
+
+---------------------------------------------------------------
 使用方法示例：
 
+//分页信息类
 PageCut pageCut = new PageCut();
-
+//设置当前也
 pageCut.setCurPage(curPage);
-
+//设置每页条数
 pageCut.setRowPerPage(rowPerPage);
-
+//初始化数据库连接
 BaseFacade baseFacade = new BaseFacade();
-
+//表名与类名不一致是使用，或分表情况下使用
 baseFacade.setTableName("mm_material");
-
+//分页查询
 Collection<MmMaterialModel> col = baseFacade.findByPageCut(MmMaterialModel.class, pageCut, null, null, "objectRrn desc");
 	
 pageCut.setResultCol(col);
